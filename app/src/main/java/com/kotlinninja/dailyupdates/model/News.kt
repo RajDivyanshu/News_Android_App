@@ -1,4 +1,4 @@
-package com.kotlinninja.dailyupdates
+package com.kotlinninja.dailyupdates.model
 
 data class News(
     val title:String,

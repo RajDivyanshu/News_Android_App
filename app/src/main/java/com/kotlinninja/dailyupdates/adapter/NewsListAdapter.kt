@@ -7,11 +7,13 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.kotlinninja.dailyupdates.model.News
 
-class NewsListAdapter(private val listener: NewsItemClicked) :
-    RecyclerView.Adapter<NewsViewHolder>() {
+class NewsListAdapter(private val listener: NewsItemClicked,val items:ArrayList<News>) :
+    RecyclerView.Adapter<NewsListAdapter.NewsViewHolder>() {
 
-    private val items: ArrayList<News> = ArrayList()
+
+//    private val items: ArrayList<News> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
 
@@ -30,23 +32,35 @@ class NewsListAdapter(private val listener: NewsItemClicked) :
         holder.titleView.text = currentItem.title
         holder.author.text = currentItem.author
         Glide.with(holder.itemView.context).load(currentItem.imageUrl).into(holder.image)
+
+//        holder.rowContent.setOnClickListener {
+
     }
 
-    fun updateNews(updatedNews: ArrayList<News>){
-        items.clear()
-        items.addAll(updatedNews)
-    }
+//    fun updateNews(updatedNews: ArrayList<News>){
+//        items.clear()
+//        items.addAll(updatedNews)
+//    }
 
     override fun getItemCount(): Int {
         return items.size
     }
+
+
+    class NewsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val titleView: TextView = itemView.findViewById(R.id.txtTitle)
+        val image: ImageView = itemView.findViewById(R.id.imgNews)
+        val author: TextView = itemView.findViewById(R.id.txtAuthor)
+    }
+
+
 }
 
-class NewsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    val titleView: TextView = itemView.findViewById(R.id.title)
-    val image: ImageView = itemView.findViewById(R.id.image)
-    val author: TextView = itemView.findViewById(R.id.author)
-}
+//class NewsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+//    val titleView: TextView = itemView.findViewById(R.id.txtTitle)
+//    val image: ImageView = itemView.findViewById(R.id.imgNews)
+//    val author: TextView = itemView.findViewById(R.id.txtAuthor)
+//}
 
 interface NewsItemClicked {
     fun onItemClicked(item: News)

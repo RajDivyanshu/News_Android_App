@@ -5,7 +5,8 @@
       <map>
         <entry key="..\:/Android Projects/News App/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.22552083333333334" />
         <entry key="..\:/Android Projects/News App/app/src/main/res/drawable/ic_launcher_background.xml" value="0.22552083333333334" />
-        <entry key="..\:/Android Projects/News App/app/src/main/res/layout/activity_main.xml" value="0.1953125" />
+        <entry key="..\:/Android Projects/News App/app/src/main/res/layout/activity_login.xml" value="0.209375" />
+        <entry key="..\:/Android Projects/News App/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Android Projects/News App/app/src/main/res/layout/item_news.xml" value="0.209375" />
         <entry key="..\:/Android Projects/News App/app/src/main/res/menu/action_bar_menu.xml" value="0.209375" />
         <entry key="..\:/Android Projects/News App/app/src/main/res/menu/menu_drawer.xml" value="0.209375" />
