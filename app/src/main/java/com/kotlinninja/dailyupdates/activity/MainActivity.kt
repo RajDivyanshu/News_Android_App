@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity(), NewsItemClicked {
 
 
         val queue = Volley.newRequestQueue(this)
-        val url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=8a2e308e3cdf4a668796a36fdda31a10"
+        val url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=8a2e308e3cdf4a668796a36fdda31a10"
         val getRequest: JsonObjectRequest = object : JsonObjectRequest(
             Request.Method.GET,
             url,
@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity(), NewsItemClicked {
                 for(i in 0 until  newsJsonArray.length()){
                     val newsJsonObject = newsJsonArray.getJSONObject(i)
                     val news = News(
-                        newsJsonObject.getString("author"),
+                        newsJsonObject.getString("publishedAt"),
                         newsJsonObject.getString("title"),
                         newsJsonObject.getString("url"),
                         newsJsonObject.getString("urlToImage")

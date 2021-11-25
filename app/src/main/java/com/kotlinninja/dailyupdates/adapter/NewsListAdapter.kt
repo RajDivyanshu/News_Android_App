@@ -30,7 +30,7 @@ class NewsListAdapter(private val listener: NewsItemClicked,val items:ArrayList<
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
         val currentItem = items[position]
         holder.titleView.text = currentItem.title
-        holder.author.text = currentItem.author
+        holder.name.text = currentItem.publishedAt
         Glide.with(holder.itemView.context).load(currentItem.imageUrl).into(holder.image)
 
 //        holder.rowContent.setOnClickListener {
@@ -50,7 +50,7 @@ class NewsListAdapter(private val listener: NewsItemClicked,val items:ArrayList<
     class NewsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val titleView: TextView = itemView.findViewById(R.id.txtTitle)
         val image: ImageView = itemView.findViewById(R.id.imgNews)
-        val author: TextView = itemView.findViewById(R.id.txtAuthor)
+        val name: TextView = itemView.findViewById(R.id.txtAuthor)
     }
 
 
